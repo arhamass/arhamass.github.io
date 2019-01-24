@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=""UTF-8>
+    <title>Player Himself</title>
+    <link rel="stylesheet" type="text/css" href="css/player.css">
+    <script src="js/player.js"></script>
+</head>
+<body onload="init();">
+    <div id="container">
+        <header>
+            <h1><strong>Arham Associate Player</strong></h1>
+            <div>
+                <h1><code>SLaaaAz 2018-2019</code></h1>
+                
+            </div>
+            
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a>|</a></li>
+                <li><a href="">About</a></li>
+                <li><a>|</a></li>
+                <li><a href="">Contact</a></li>
+                
+            </ul>
+        </nav>
+        <aside>
+            <h1>Movies</h1>
+            <div id="poster">
+                <p>
+                    <img id="0" src="images/player/poster_APrim.png"/>
+                    <img id="1" src="images/player/poster_funny.png"/>
+                    <img id="2" src="images/player/poster_muallaJut.png"/>
+                </p>
+            </div>
+            
+        </aside>
+        <main>
+            <section id="player">
+                <article>
+                    <h1>SLaaaAz Responsible Player</h1>
+                    <div id="stage">
+                        <video id="myVideo">
+                        </video>
+                        
+                    </div>
+                    <div id="progBarMarks">
+                        <div id="progBar"></div>
+                        <div id="msg">Load the movie</div>
+                    </div>
+
+                    <div id="controls">
+                        <button id="play" onclick="play(event);">&#x22b3;</button>
+                        <button onclick="bxx();">&#xab;</button>
+                        <button onclick="fxx();">&#xbb;</button>
+                        <button onclick="left();">&#x21e6;</button>
+                        <button onclick="right();">&#x21e8;</button>
+                        <button onclick="scalePlus();">&#x21e7;</button>
+                        <button onclick="scaleMinus();">&#x21e9;</button>
+                        <button onclick="rotateR();">&#x21bb;</button>
+                        <button onclick="rotateL();">&#x21ba;</button>
+                        <button onclick="reset();">&#x2263;</button>
+                    
+                    </div>
+                    </article>    
+            </section>
+            <section>
+                <article>
+                    <div id="volOnOff">
+                        <img onclick="vol_OnOff(event)"
+                        src="icons/player/volon.png" width="20" height="20"/>
+                    </div>
+                    <div id="vol">
+                        <input onchange="upDateVol(event);" type="range" id="volume" name="val" min="0" max="100" value="50"><span>Volume</span>
+                        
+                    </div>
+                    
+                    <div id="filter">
+                        <details id="button">
+                            <summary id="filterTitle">Filter</summary>
+                            <button id="grayscale">grayscale</button>
+                            <button id="sepia">sepia</button>
+                            <button id="blur">blur</button>
+                            <button id="brightness">brightness</button>
+                            <button id="contrast">contrast</button>
+                            <button id="hue">hue-normal</button>
+                            <button id="hue2">hue-medium</button>
+                            <button id="hue3">hue-high</button>
+                            <button id="saturate">saturate</button>
+                            <button id="invert">invert</button>
+                            <button id="none">No-Filter</button>
+                        </details>
+                    </div>
+                </article>
+            </section>
+
+        </main>    
+        <aside id="right">
+            <div id="perInf">
+            <h1>Personal Information</h1>
+                <P><strong>Name</strong></P>
+                <p> <code>Zahid Naseer</code></p>
+                <P><strong>City</strong></P>
+                <p><code>Karachi.</code></p>
+                <p><strong>Countary</strong></p>
+                <p><code>Pakistan</code></p>
+                <p><strong>Mobile No</strong></p>
+                <p><code>0311-2810720</code></p>
+            </div>
+
+        </aside>
+        <footer>
+            <h1><code>&COPY;2019</code></h1>
+        </footer>
+    </div>
+</body>
+</html>
