@@ -1,0 +1,116 @@
+/*Menu heading Arham */
+#brndName{
+    color:navy;
+    font-weight: bold;
+}
+/*Set Arham Overview pargraph*/
+#siteDes{
+    padding:50px 0 0 0;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+
+}
+/*Setting Arham Overview paragraph also */
+#setFont p {
+    text-indent: 50px;
+    text-align: justify;
+    font-family: 'Courier New', Courier, monospace;
+    color:gray;
+}
+/*Setting Services heading part One*/
+.OverHeadIst{
+    padding:5px;
+    background-color:rgb(32, 32, 32);
+    color:rgb(32,32,32);
+    width:10px;
+    
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:12;
+    
+}
+/*Setting Services heading part Two*/
+.OverHead2nd{
+    padding:5px;
+    background-color:rgb(193, 214, 6);
+    
+    width:30px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:12;
+
+}
+/*Setting Arham Overview vertical black line*/
+.vl{
+    width:5px;
+    height: 150px;
+    background-color:black;
+}
+
+/*Setting Hot Product Description*/
+.sideTit{  
+    color:lightslategray;
+    font-size:36;
+    font-weight: bold;
+    
+}
+.sideDes{
+    font-size:46;
+    color:yellowgreen;
+
+}
+.sideDes em{
+    color:green
+}
+/*Setting Estates: make horizental line*/
+#hrline{
+    height: 2px;
+    width: 100%;
+    background-color:red;
+}
+/*Setting Plotes available: fade and show addresss*/
+.container{
+    position: relative;
+    width:50%;
+}
+.image{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+.middle{
+    transition: .5s ease;
+    opacity: 0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+}
+.container:hover .image{
+    opacity: 0.3;
+}
+.container:hover .middle{
+    opacity: 1;
+}
+.text{
+    background-color:#4caf50;
+    color:white;
+    font-size:16px;
+    padding:16px 32px;
+}
+
+/*Setting Properties news*/
+.news{
+    padding:50px;
+    border:1px solid rgb(220,220,220);
+    border-bottom: 3px solid rgb(150,150,150);
+    
+    
+}
+#source{
+    font-size:10px;
+}
