@@ -101,15 +101,10 @@ function init(){
         switch (movieIndex){
             
             case '0':
-                //aprim movie
-                movieAdd="movies/aprim.mp4";
-                loadMovie(movieAdd);
-                break;
-            case '1':
                 movieAdd="/movies/funny.mp4";
                 loadMovie(movieAdd);
                 break;
-            case '2':
+            case '1':
                 movieAdd="movies/mjut.mp4";
                 loadMovie(movieAdd);
                 break;
