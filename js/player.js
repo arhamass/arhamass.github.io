@@ -102,15 +102,15 @@ function init(){
             
             case '0':
                 //aprim movie
-                movieAdd="arhamass.github.io/movies/aprim.mp4";
+                movieAdd="movies/aprim.mp4";
                 loadMovie(movieAdd);
                 break;
             case '1':
-                movieAdd="arhamass.github.io/movies/funny.mp4";
+                movieAdd="/movies/funny.mp4";
                 loadMovie(movieAdd);
                 break;
             case '2':
-                movieAdd="arhamass.github.io/movies/mjut.mp4";
+                movieAdd="movies/mjut.mp4";
                 loadMovie(movieAdd);
                 break;
         }       
