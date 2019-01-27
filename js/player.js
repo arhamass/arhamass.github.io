@@ -111,24 +111,36 @@ function init(){
         }       
     });
 
-    //progBar
-    video.addEventListener('progress', function(e){
+    //prog Time Update
+    video.addEventListener('timeupdate',function(e){
+        //movie time setting 
+        
         var movCurTime=video.currentTime;
         var movDur=video.duration;
         TotMovDur=movDur-movCurTime;
+        var curPersent=(movCurTime/movDur)*100;
         
+        ProgBar.style.width=curPersent+"%";
+ 
+    }); 
+     //move movie 
+     pBarmarks.addEventListener('click', function(e){
+            
+        if(video.src!=""){
+            msg.innerHTML="";
+            //console.log(pBarmarks.getBoundingClientRect());
+            var markscurpos=e.x-pBarmarks.getBoundingClientRect().left;
+            var marksrwidth=pBarmarks.getBoundingClientRect().right-pBarmarks.getBoundingClientRect().left;
+            var marksperset=(markscurpos/marksrwidth)*100;
+
+            var movpersent=(video.duration*marksperset)/100;
+            video.currentTime=movpersent;
+
+        }else{
+            msg.innerHTML="Progress Message... please load a movie."
+        }
     });
     
-    //prog Time Update
-    video.addEventListener('timeupdate', timUpdate,false);
-    
-    function timUpdate(e){
-        var movCurTime=video.currentTime;
-        var curPersent=parseInt((movCurTime/TotMovDur)*100);
-        ProgBar.style.width=curPersent+'%';
-
-    }
-
     //movie ended
     video.addEventListener('ended',function(e){
         if(video.pause){
@@ -140,38 +152,6 @@ function init(){
             controls.innerHTML="&#x220e;";
         }
     });
-    //move movie 
-        pBarmarks.addEventListener('click', function(e){
-            
-        if(video.src!=""){
-            msg.innerHTML="";
-            var wid=pBarmarks.getBoundingClientRect();
-            var p=parseInt(((e.x-wid.x)/wid.width)*100);
-            ProgBar.style.width= e.x-wid.x + 'px';
-            var vp=(video.duration/100)*p;
-            video.currentTime=vp;
-            
-            /*
-            var barRectInf=pBarmarks.getBoundingClientRect();
-            var barLeftVal=barRectInf.x;
-            var barWidth=barRectInf.width+barLeftVal;
-            var barCurVal=e.x-barLeftVal;
-            var barParsent=((barCurVal+barLeftVal)/barWidth)*100;
-            
-            ProgBar.style.width=barCurVal + "px";
-
-            var movDur=video.duration;
-            var movCurTime=(movDur/barParsent)*100;
-
-            console.log(barParsent,movCurTime,video.duration);
-            //video.currentTime=movCurTime;
-           */
-        }else{
-            msg.innerHTML="Progress Message... please load a movie."
-        }
-    });
-    
-    
    
 }
 
