@@ -136,10 +136,10 @@ function init(){
     });
     //buffring setting
     function chkBuff(){
-        var endBuf=video.buffered.end(0);
+        var endBuf=video.buffered.end(video.currentTime);
         var soFor=parseInt(((endBuf/video.duration)*100));
         loadMov.style.width=soFor + "%";
-        console.log(soFor);
+       
     }
 
     //move movie 
