@@ -136,7 +136,7 @@ function init(){
     });
     //buffring setting
     function chkBuff(){
-        var endBuf=video.buffered.end(video.currentTime);
+        var endBuf=video.buffered.end(0);
         var soFor=parseInt(((endBuf/video.duration)*100));
         loadMov.style.width=soFor + "%";
        
