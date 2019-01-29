@@ -10,6 +10,7 @@ var ProgBar;
 var pBarmarks;
 var volOnOff=true;
 var msg;
+var loadMov;
 
 function init(){
     stage=document.getElementById('stage');
@@ -19,7 +20,8 @@ function init(){
     ProgBar=document.getElementById('progBar');
     pBarmarks=document.getElementById('progBarMarks');
     msg=document.getElementById('msg');
-    
+    loadMov=document.getElementById('loadPro');
+
     msg.innerHTML="";
 
     var properties=['transform', 'WebkitTransform', 'MozTransform', 'msTransform', 'OTransform'];
@@ -35,6 +37,7 @@ function init(){
     }
     video.style.left=0;
     video.style.top=0;
+
     //filter section
     setFilter.addEventListener('click',function(e){
         var el=e.target;
@@ -91,6 +94,7 @@ function init(){
            
         }
     });
+
     //Change moveis section
     var changeMovie=document.getElementById('poster');
     changeMovie.addEventListener('click', function(e){
@@ -101,15 +105,20 @@ function init(){
         switch (movieIndex){
             
             case '0':
-                movieAdd="/movies/funny.mp4";
+                movieAdd="movies/funny.mp4";
                 loadMovie(movieAdd);
                 break;
             case '1':
                 movieAdd="movies/mjut.mp4";
                 loadMovie(movieAdd);
                 break;
+            case '2':
+                movieAdd="movies/MughalsIntro.mp4";
+                loadMovie(movieAdd);
+                break;
         }       
     });
+
 
     //prog Time Update
     video.addEventListener('timeupdate',function(e){
@@ -121,9 +130,19 @@ function init(){
         var curPersent=(movCurTime/movDur)*100;
         
         ProgBar.style.width=curPersent+"%";
- 
-    }); 
-     //move movie 
+
+        chkBuff();
+       
+    });
+    //buffring setting
+    function chkBuff(){
+        var endBuf=video.buffered.end(0);
+        var soFor=parseInt(((endBuf/video.duration)*100));
+        loadMov.style.width=soFor + "%";
+        console.log(soFor);
+    }
+
+    //move movie 
      pBarmarks.addEventListener('click', function(e){
             
         if(video.src!=""){

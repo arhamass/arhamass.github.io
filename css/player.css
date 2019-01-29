@@ -264,4 +264,9 @@ section>article button{
     padding-bottom: 0px;
 
 }
+#loadPro{
+    width: 0px;
+    height: 2px;
+    background: red;
+}
 
